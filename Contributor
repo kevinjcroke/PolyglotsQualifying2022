@@ -8,7 +8,7 @@ namespace polyglots.practice._2022
 {
     public class Contributor
     {
-        public string name { get; set; }
+        public String name { get; set; }
         public Dictionary<String, int> skills = new Dictionary<String, int>();
 
         public int GetSkillLevel(String skillName)

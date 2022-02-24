@@ -7,15 +7,17 @@ namespace polyglots.practice._2022
 {
     class Project
     {
-        public string name { get; set; }
+        public String name { get; set; }
         public int duration { get; set; }
         public int score { get; set; }
         public int bestBefore { get; set; }
-        public Dictionary<string, int> roles { get; set; }
+        public Dictionary<String, int> roles { get; set; } = new Dictionary<String, int>();
 
         public bool canComplete(List<Contributor> contributors)
         {
-            return false;
+            foreach ( var role in roles ) {
+                
+            }
         }
 
         public bool canCompleteBestBefore()
