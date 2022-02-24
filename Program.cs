@@ -27,6 +27,8 @@ namespace polyglots.practice._2022
             var projCount = int.Parse(first[1]);
             int currentLine = 1;
             var contributors = new List<Contributor>();
+            var projects = new List<Project>();
+            int currentDay = 0;
 
             for (int x = 0; x < contribCount; x++)
             {
@@ -36,6 +38,7 @@ namespace polyglots.practice._2022
                 currentLine++;
 
                 var contributor = new Contributor();
+                contributors.Add(contributor);
                 contributor.name = username;
 
                 for (int i = 0; i < userSkillCount; i++)
@@ -48,7 +51,23 @@ namespace polyglots.practice._2022
 
             for (int x = 0; x < projCount; x++)
             {
+                var project = new Project();
+                projects.Add(project);
+                var projLine = lines[currentLine].Split(' ');
+                project.name = lines[0];
+                project.duration = int.Parse(lines[1]);
+                project.score = int.Parse(lines[2]);
+                project.bestBefore = int.Parse(lines[3]);
 
+                var projectContribCount = int.Parse(lines[4]);
+                currentLine++;
+                for (int i = 0; i < projectContribCount; i++)
+                {
+                    var projContribLine = lines[currentLine].Split(' ');
+                    project.roles.Add(projContribLine[0], int.Parse(projContribLine[1]))
+
+                    currentLine++;
+                }
             }
 
 
