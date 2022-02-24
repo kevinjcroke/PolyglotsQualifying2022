@@ -12,10 +12,11 @@ namespace polyglots.practice._2022
         static async Task Main(string[] args)
         {
             await WriteFile("a_an_example.{0}.txt");
-            // await WriteFile("b_basic.{0}.txt");
-            // await WriteFile("c_coarse.{0}.txt");
-            // await WriteFile("d_difficult.{0}.txt");
-            // await WriteFile("e_elaborate.{0}.txt");
+            await WriteFile("b_better_start_small.{0}.txt");
+            await WriteFile("c_collaboration.{0}.txt");
+            await WriteFile("d_dense_schedule.{0}.txt");
+            await WriteFile("e_exceptional_skills.{0}.txt");
+            await WriteFile("f_find_great_mentors.{0}.txt");
         }
 
         private static async Task WriteFile(string textFileFormat)
@@ -74,11 +75,10 @@ namespace polyglots.practice._2022
 
 
             IStrategy strategy = new SimpleStrategy(projects, contributorDictionary);
-            Console.WriteLine(strategy.Solve());
 
-            //var result = strategy.Solve();
+            var result = strategy.Solve();
 
-            //await File.WriteAllTextAsync($"Results/{string.Format(textFileFormat, "out")}", result);
+            await File.WriteAllTextAsync($"Results/{string.Format(textFileFormat, "out")}", result);
         }
     }
 }
