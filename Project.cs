@@ -19,33 +19,6 @@ namespace polyglots.practice._2022
             get { return score / duration; }
         }
 
-        public bool canComplete(ContributorDictionary contributors)
-        {
-            List<Contributor> team = new List<Contributor>();
-            List<String> coveredSkills = new List<String>();
-
-            foreach (var role in roles)
-            {
-                foreach (var contributor in contributors.contributors)
-                {
-                    if (!team.Contains(contributor) && contributor.GetSkillLevel(role.skillName) >= role.skillLevel)
-                    {
-                        team.Add(contributor);
-                        coveredSkills.Add(role.skillName);
-                        break;
-                    }
-                }
-            }
-
-            if (coveredSkills.Count() == roles.Count())
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
 
         public List<Contributor> teamComplete(ContributorDictionary contributors)
         {
@@ -71,7 +44,7 @@ namespace polyglots.practice._2022
             }
             else
             {
-                return new List<Contributor>();
+                return null;
             }
         }
 
