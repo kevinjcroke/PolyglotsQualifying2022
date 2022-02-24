@@ -6,7 +6,7 @@ using System;
 
 namespace polyglots.practice._2022
 {
-    class Project
+    public class Project
     {
         public String name { get; set; }
         public int duration { get; set; }
@@ -81,9 +81,5 @@ namespace polyglots.practice._2022
         {
             return $"Project Name: {name} {Environment.NewLine} Duration: {duration}{Environment.NewLine}Score: {score} {Environment.NewLine}BestBefore: {bestBefore}{Environment.NewLine}  {string.Join(Environment.NewLine, roles)}{Environment.NewLine}";
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> 69d71e8b48815876e1e697ac4524452d5a71690b
     }
 }

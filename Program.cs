@@ -29,7 +29,6 @@ namespace polyglots.practice._2022
             var contributors = new List<Contributor>();
             var contributorDictionary = new ContributorDictionary();
             var projects = new List<Project>();
-            int currentDay = 0;
 
             for (int x = 0; x < contribCount; x++)
             {
@@ -73,11 +72,10 @@ namespace polyglots.practice._2022
                 }
             }
 
-            contributors.ForEach(Console.WriteLine);
-            projects.ForEach(Console.WriteLine);
 
+            IStrategy strategy = new SimpleStrategy(projects, contributorDictionary);
+            Console.WriteLine(strategy.Solve());
 
-            //IStrategy strategy;
             //var result = strategy.Solve();
 
             //await File.WriteAllTextAsync($"Results/{string.Format(textFileFormat, "out")}", result);

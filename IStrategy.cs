@@ -6,6 +6,6 @@ namespace polyglots.practice._2022
 {
     public interface IStrategy
     {
-        public string Solve( List<Project> project, ContributorDictionary contributors );
+        public string Solve( );
     }
 }
