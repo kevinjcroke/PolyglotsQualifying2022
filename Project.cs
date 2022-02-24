@@ -14,48 +14,61 @@ namespace polyglots.practice._2022
         public int bestBefore { get; set; }
         public Dictionary<String, int> roles { get; set; } = new Dictionary<String, int>();
 
-        public double pointsByDay { 
+        public double pointsByDay
+        {
             get { return score / duration; }
         }
 
-        public bool canComplete( ContributorDictionary contributors )
+        public bool canComplete(ContributorDictionary contributors)
         {
             List<Contributor> team = new List<Contributor>();
             List<String> coveredSkills = new List<String>();
 
-            foreach ( var role in roles ) {
-                foreach ( var contributor in contributors.contributors ) {
-                    if ( !team.Contains ( contributor ) && contributor.GetSkillLevel( role.Key ) >= role.Value ) {
-                        team.Add( contributor );
-                        coveredSkills.Add( role.Key );
+            foreach (var role in roles)
+            {
+                foreach (var contributor in contributors.contributors)
+                {
+                    if (!team.Contains(contributor) && contributor.GetSkillLevel(role.Key) >= role.Value)
+                    {
+                        team.Add(contributor);
+                        coveredSkills.Add(role.Key);
                     }
                 }
             }
 
-            if ( coveredSkills.Count() = roles.Count() ) { 
+            if (coveredSkills.Count() == roles.Count())
+            {
                 return true;
-            } else { 
+            }
+            else
+            {
                 return false;
             }
         }
 
-        public List<Contributor> teamComplete( ContributorDictionary contributors )
+        public List<Contributor> teamComplete(ContributorDictionary contributors)
         {
             List<Contributor> team = new List<Contributor>();
             List<String> coveredSkills = new List<String>();
 
-            foreach ( var role in roles ) {
-                foreach ( var contributor in contributors.contributors ) {
-                    if ( !team.Contains ( contributor ) && contributor.GetSkillLevel( role.Key ) >= role.Value ) {
-                        team.Add( contributor );
-                        coveredSkills.Add( role.Key );
+            foreach (var role in roles)
+            {
+                foreach (var contributor in contributors.contributors)
+                {
+                    if (!team.Contains(contributor) && contributor.GetSkillLevel(role.Key) >= role.Value)
+                    {
+                        team.Add(contributor);
+                        coveredSkills.Add(role.Key);
                     }
                 }
             }
 
-            if ( coveredSkills.Count() = roles.Count() ) { 
+            if (coveredSkills.Count() == roles.Count())
+            {
                 return team;
-            } else { 
+            }
+            else
+            {
                 return new List<Contributor>();
             }
         }
@@ -66,8 +79,8 @@ namespace polyglots.practice._2022
         }
         public override string ToString()
         {
-            return $"ContributorName: {name} {Environment.NewLine} Duration: {duration}{Environment.NewLine}Score: {bestBefore}{Environment.NewLine}  {string.Join(Environment.NewLine, roles)}{Environment.NewLine}";
+            return $"Project Name: {name} {Environment.NewLine} Duration: {duration}{Environment.NewLine}Score: {score} {Environment.NewLine}BestBefore: {bestBefore}{Environment.NewLine}  {string.Join(Environment.NewLine, roles)}{Environment.NewLine}";
         }
-        
+
     }
 }
