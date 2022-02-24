@@ -7,7 +7,7 @@ namespace polyglots.practice._2022
 {
     class Contributor
     {
-        public string name { get; set; }
+        public String name { get; set; }
         public Dictionary<String, int> skills = new Dictionary<String, int>();
 
         public int GetSkillLevel(String skillName) {
@@ -18,7 +18,7 @@ namespace polyglots.practice._2022
             }
         }
 
-        public void IncreateSkillLevel( string skillName ) {
+        public void IncreateSkillLevel( String skillName ) {
             if ( skills.ContainsKey( skillName ) ) {
                 skills[skillName] = skills[skillName] + 1;
             } else {
