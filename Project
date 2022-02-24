@@ -39,6 +39,27 @@ namespace polyglots.practice._2022
             }
         }
 
+        public List<Contributor> teamComplete( ContributorDictionary contributors )
+        {
+            List<Contributor> team = new List<Contributor>();
+            List<String> coveredSkills = new List<String>();
+
+            foreach ( var role in roles ) {
+                foreach ( var contributor in contributors.contributors ) {
+                    if ( !team.Contains ( contributor ) && contributor.GetSkillLevel( role.Key ) >= role.Value ) {
+                        team.Add( contributor );
+                        coveredSkills.Add( role.Key );
+                    }
+                }
+            }
+
+            if ( coveredSkills.Count() = roles.Count() ) { 
+                return team;
+            } else { 
+                return new List<Contributor>();
+            }
+        }
+
         public bool canCompleteBestBefore(int day)
         {
             return day + duration <= bestBefore;
