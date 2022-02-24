@@ -11,8 +11,9 @@ namespace polyglots.practice._2022
         public String skillName;
         public int skillLevel;
 
-        public Role( String skillName, int skillLevel ) {
-            this.skillName = skillname;
+        public Role(String skillName, int skillLevel)
+        {
+            this.skillName = skillName;
             this.skillLevel = skillLevel;
         }
     }

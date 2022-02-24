@@ -12,7 +12,7 @@ namespace polyglots.practice._2022
         public int duration { get; set; }
         public int score { get; set; }
         public int bestBefore { get; set; }
-        public List<Roles> roles { get; set; } = new List<Roles>();
+        public List<Role> roles { get; set; } = new List<Role>();
 
         public double pointsByDay
         {
@@ -32,6 +32,7 @@ namespace polyglots.practice._2022
                     {
                         team.Add(contributor);
                         coveredSkills.Add(role.skillName);
+                        break;
                     }
                 }
             }
@@ -59,6 +60,7 @@ namespace polyglots.practice._2022
                     {
                         team.Add(contributor);
                         coveredSkills.Add(role.skillName);
+                        break;
                     }
                 }
             }

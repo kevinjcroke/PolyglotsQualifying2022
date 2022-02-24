@@ -11,7 +11,7 @@ namespace polyglots.practice._2022
 
         static async Task Main(string[] args)
         {
-            await WriteFile("a_an_example.{0}.txt");
+            //await WriteFile("a_an_example.{0}.txt");
             await WriteFile("b_better_start_small.{0}.txt");
             await WriteFile("c_collaboration.{0}.txt");
             await WriteFile("d_dense_schedule.{0}.txt");
@@ -67,7 +67,7 @@ namespace polyglots.practice._2022
                 for (int i = 0; i < projectContribCount; i++)
                 {
                     var projContribLine = lines[currentLine].Split(' ');
-                    project.roles.Add( new Role( projContribLine[0], int.Parse(projContribLine[1]) ) );
+                    project.roles.Add(new Role(projContribLine[0], int.Parse(projContribLine[1])));
 
                     currentLine++;
                 }
