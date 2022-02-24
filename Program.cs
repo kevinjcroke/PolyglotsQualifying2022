@@ -75,10 +75,10 @@ namespace polyglots.practice._2022
 
 
 
-            IStrategy strategy;
+            //IStrategy strategy;
             //var result = strategy.Solve();
 
-            await File.WriteAllTextAsync($"Results/{string.Format(textFileFormat, "out")}", result);
+            //await File.WriteAllTextAsync($"Results/{string.Format(textFileFormat, "out")}", result);
         }
     }
 }

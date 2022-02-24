@@ -2,6 +2,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
+using System;
 
 namespace polyglots.practice._2022
 {
@@ -9,9 +10,9 @@ namespace polyglots.practice._2022
     {
         public List<Contributor> contributors { get; set; } = new List<Contributor>();
 
-        public contributor GetHighestSkillContributor(String skillName)
+        public Contributor GetHighestSkillContributor(String skillName)
         {
-            Contributor highestContributor;
+            Contributor highestContributor=null;
 
             foreach (var contributor in contributors)
             {
