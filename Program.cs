@@ -67,7 +67,7 @@ namespace polyglots.practice._2022
                 for (int i = 0; i < projectContribCount; i++)
                 {
                     var projContribLine = lines[currentLine].Split(' ');
-                    project.roles.Add(projContribLine[0], int.Parse(projContribLine[1]))
+                    project.roles.Add(projContribLine[0], int.Parse(projContribLine[1]));
 
                     currentLine++;
                 }
@@ -75,10 +75,10 @@ namespace polyglots.practice._2022
 
 
 
-            IStrategy strategy;
+            //IStrategy strategy;
             //var result = strategy.Solve();
 
-            await File.WriteAllTextAsync($"Results/{string.Format(textFileFormat, "out")}", result);
+            //await File.WriteAllTextAsync($"Results/{string.Format(textFileFormat, "out")}", result);
         }
     }
 }
