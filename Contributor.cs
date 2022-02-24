@@ -23,7 +23,7 @@ namespace polyglots.practice._2022
             }
         }
 
-        public void IncreateSkillLevel(string skillName)
+        public void IncreaseSkillLevel(string skillName)
         {
             if (skills.ContainsKey(skillName))
             {
