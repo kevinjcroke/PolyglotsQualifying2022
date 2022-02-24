@@ -12,7 +12,7 @@ namespace polyglots.practice._2022
         public int duration { get; set; }
         public int score { get; set; }
         public int bestBefore { get; set; }
-        public Dictionary<String, int> roles { get; set; } = new Dictionary<String, int>();
+        public List<Roles> roles { get; set; } = new List<Roles>();
 
         public double pointsByDay
         {
@@ -28,10 +28,10 @@ namespace polyglots.practice._2022
             {
                 foreach (var contributor in contributors.contributors)
                 {
-                    if (!team.Contains(contributor) && contributor.GetSkillLevel(role.Key) >= role.Value)
+                    if (!team.Contains(contributor) && contributor.GetSkillLevel(role.skillName) >= role.skillLevel)
                     {
                         team.Add(contributor);
-                        coveredSkills.Add(role.Key);
+                        coveredSkills.Add(role.skillName);
                     }
                 }
             }
@@ -55,10 +55,10 @@ namespace polyglots.practice._2022
             {
                 foreach (var contributor in contributors.contributors)
                 {
-                    if (!team.Contains(contributor) && contributor.GetSkillLevel(role.Key) >= role.Value)
+                    if (!team.Contains(contributor) && contributor.GetSkillLevel(role.skillName) >= role.skillLevel)
                     {
                         team.Add(contributor);
-                        coveredSkills.Add(role.Key);
+                        coveredSkills.Add(role.skillName);
                     }
                 }
             }
