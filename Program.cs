@@ -23,15 +23,35 @@ namespace polyglots.practice._2022
             string[] lines = File.ReadAllLines($"files/{string.Format(textFileFormat, "in")}");
 
             var first = lines[0].Split(' ');
-            var contribCount = first[0];
-            var projCount = first[1];
+            var contribCount = int.Parse(first[0]);
+            var projCount = int.Parse(first[1]);
             int currentLine = 1;
             var contributors = new List<Contributor>();
 
             for (int x = 0; x < contribCount; x++)
             {
-                contributors
+                var userLine = lines[currentLine].Split(' ');
+                var username = userLine[0];
+                var userSkillCount = int.Parse(userLine[1]);
+                currentLine++;
+
+                var contributor = new Contributor();
+                contributor.name = username;
+
+                for (int i = 0; i < userSkillCount; i++)
+                {
+                    var skillLine = lines[currentLine].Split(' ');
+                    contributor.skills.Add(skillLine[0], int.Parse(skillLine[1]));
+                    currentLine++;
+                }
             }
+
+            for (int x = 0; x < projCount; x++)
+            {
+
+            }
+
+
 
             IStrategy strategy;
             //var result = strategy.Solve();
