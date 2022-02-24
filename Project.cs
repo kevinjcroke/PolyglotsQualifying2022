@@ -68,6 +68,5 @@ namespace polyglots.practice._2022
         {
             return $"ContributorName: {name} {Environment.NewLine} Duration: {duration}{Environment.NewLine}Score: {bestBefore}{Environment.NewLine}  {string.Join(Environment.NewLine, roles)}{Environment.NewLine}";
         }
-        
     }
 }
