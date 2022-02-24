@@ -36,7 +36,7 @@ namespace polyglots.practice._2022
 
         public bool canCompleteBestBefore(int day)
         {
-            return false;
+            return day + duration <= bestBefore;
         }
 
         public 
