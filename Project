@@ -13,16 +13,26 @@ namespace polyglots.practice._2022
         public int bestBefore { get; set; }
         public Dictionary<String, int> roles { get; set; } = new Dictionary<String, int>();
 
-        public bool canComplete(List<Contributor> contributors)
+        public bool canComplete( ContributorDictionary contributors )
         {
+            List<Contributor> team = new List<Contributor>();
+
             foreach ( var role in roles ) {
-                
+                foreach ( var contributor in contributors.contributors ) {
+                    if ( !team.Contains ( role.Key ) && contributor.GetSkillLevel( role.Key ) >= role.Value ) {
+                        team.Add( contributor );
+                    }
+                }
             }
+
+            return true;
         }
 
-        public bool canCompleteBestBefore()
+        public bool canCompleteBestBefore(int day)
         {
             return false;
         }
+
+        public 
     }
 }
