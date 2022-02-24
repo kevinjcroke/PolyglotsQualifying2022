@@ -25,7 +25,7 @@ namespace polyglots.practice._2022
 
             foreach ( var role in roles ) {
                 foreach ( var contributor in contributors.contributors ) {
-                    if ( !team.Contains ( role.Key ) && contributor.GetSkillLevel( role.Key ) >= role.Value ) {
+                    if ( !team.Contains ( contributor ) && contributor.GetSkillLevel( role.Key ) >= role.Value ) {
                         team.Add( contributor );
                         coveredSkills.Add( role.Key );
                     }

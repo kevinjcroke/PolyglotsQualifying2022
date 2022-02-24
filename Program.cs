@@ -27,6 +27,7 @@ namespace polyglots.practice._2022
             var projCount = int.Parse(first[1]);
             int currentLine = 1;
             var contributors = new List<Contributor>();
+            var contributorDictionary = new ContributorDictionary();
             var projects = new List<Project>();
             int currentDay = 0;
 
@@ -48,6 +49,8 @@ namespace polyglots.practice._2022
                     currentLine++;
                 }
             }
+
+            contributorDictionary.contributors = contributors;
 
             for (int x = 0; x < projCount; x++)
             {
