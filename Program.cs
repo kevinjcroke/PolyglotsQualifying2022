@@ -57,12 +57,12 @@ namespace polyglots.practice._2022
                 var project = new Project();
                 projects.Add(project);
                 var projLine = lines[currentLine].Split(' ');
-                project.name = lines[0];
-                project.duration = int.Parse(lines[1]);
-                project.score = int.Parse(lines[2]);
-                project.bestBefore = int.Parse(lines[3]);
+                project.name = projLine[0];
+                project.duration = int.Parse(projLine[1]);
+                project.score = int.Parse(projLine[2]);
+                project.bestBefore = int.Parse(projLine[3]);
 
-                var projectContribCount = int.Parse(lines[4]);
+                var projectContribCount = int.Parse(projLine[4]);
                 currentLine++;
                 for (int i = 0; i < projectContribCount; i++)
                 {
@@ -73,6 +73,8 @@ namespace polyglots.practice._2022
                 }
             }
 
+            contributors.ForEach(Console.WriteLine);
+            projects.ForEach(Console.WriteLine);
 
 
             //IStrategy strategy;
