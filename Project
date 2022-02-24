@@ -43,5 +43,10 @@ namespace polyglots.practice._2022
         {
             return day + duration <= bestBefore;
         }
+        public override string ToString()
+        {
+            return $"ContributorName: {name} {Environment.NewLine} Duration: {duration}{Environment.NewLine}Score: {bestBefore}{Environment.NewLine}  {string.Join(Environment.NewLine, roles)}{Environment.NewLine}";
+        }
+        
     }
 }

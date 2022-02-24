@@ -67,7 +67,7 @@ namespace polyglots.practice._2022
                 for (int i = 0; i < projectContribCount; i++)
                 {
                     var projContribLine = lines[currentLine].Split(' ');
-                    project.roles.Add(projContribLine[0], int.Parse(projContribLine[1]))
+                    project.roles.Add(projContribLine[0], int.Parse(projContribLine[1]));
 
                     currentLine++;
                 }

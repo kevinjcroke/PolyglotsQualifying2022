@@ -31,8 +31,13 @@ namespace polyglots.practice._2022
             }
             else
             {
-                skills.Add(skillName);
+                skills.Add(skillName, 0);
             }
+        }
+
+        public override string ToString()
+        {
+            return $"ContributorName: {name} \r\n {string.Join(Environment.NewLine, skills)}{Environment.NewLine}";
         }
     }
 }
