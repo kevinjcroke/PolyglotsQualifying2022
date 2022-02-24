@@ -1,0 +1,26 @@
+using System.IO;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Linq;
+
+namespace polyglots.practice._2022
+{
+    class Project
+    {
+        public string name { get; set; }
+        public int duration { get; set; }
+        public int score { get; set; }
+        public int bestBefore { get; set; }
+        public Dictionary<string, int> roles { get; set; }
+
+        public bool canComplete(List<Contributor> contributors)
+        {
+            return false;
+        }
+
+        public bool canCompleteBestBefore()
+        {
+            return false;
+        }
+    }
+}

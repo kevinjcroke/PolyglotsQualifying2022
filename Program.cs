@@ -22,12 +22,19 @@ namespace polyglots.practice._2022
         {
             string[] lines = File.ReadAllLines($"files/{string.Format(textFileFormat, "in")}");
 
-            for (int i = 1; i < lines.Length - 1; i += 2)
+            var first = lines[0].Split(' ');
+            var contribCount = first[0];
+            var projCount = first[1];
+            int currentLine = 1;
+            var contributors = new List<Contributor>();
+
+            for (int x = 0; x < contribCount; x++)
             {
+                contributors
             }
 
             IStrategy strategy;
-            var result = strategy.Solve();
+            //var result = strategy.Solve();
 
             await File.WriteAllTextAsync($"Results/{string.Format(textFileFormat, "out")}", result);
         }
